@@ -87,3 +87,10 @@ FROM Summary s
 INNER JOIN Objects o ON s.ObjectID = o.ObjectID
 WHERE o.Description LIKE '%1967%' AND o.Description LIKE '%Ford%' AND o.Description LIKE '%Mustang%' AND s.Category LIKE '%PassengerVehicles%' AND s.WinBid IS NOT NULL
 ORDER BY s.EndDate ASC
+
+SELECT s.AuctionID, s.WinBid, Convert(date, s.EndDate) AS SoldDate, o.Description
+FROM Summary s
+INNER JOIN Objects o ON s.ObjectID = o.ObjectID
+WHERE o.Description LIKE '%2001%' AND o.Description LIKE '%BMW%' AND o.Description
+LIKE '%7-Series%' AND s.Category LIKE '%PassengerVehicles%' AND s.WinBid IS NOT NULL
+ORDER BY s.EndDate ASC
